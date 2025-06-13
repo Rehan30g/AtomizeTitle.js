@@ -1,0 +1,97 @@
+:root {
+    --highlight-color: #d4af37; 
+    --highlight-text-hover: #000000;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    color: #f0f0f0;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevent scrollbars */
+    
+    transition: transform 0.2s ease-out;
+}
+
+#animated-text {
+    max-width: 800px;
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.4;
+    perspective: 800px;
+    
+    transition: transform 0.2s ease-out;
+}
+
+.word-wrapper {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 0.1em;
+    position: relative;
+}
+
+.word {
+    display: inline-flex; /* Use flex to align letters */
+    position: relative; /* For the highlight pseudo-element */
+}
+
+.letter {
+    display: inline-block;
+    opacity: 0;
+    filter: blur(8px);
+    transform: translate(var(--tx, 0), var(--ty, 0)) rotate(var(--rt, 0));
+    transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1), 
+                opacity 1s cubic-bezier(0.19, 1, 0.22, 1),
+                filter 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.letter.visible {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate(0, 0) rotate(0);
+}
+
+.word.highlight .letter {
+    color: var(--highlight-color);
+    transition: color 0.4s ease;
+    position: relative;
+    z-index: 2; /* Ensure letters are above the highlight block */
+}
+
+.word.highlight::before {
+    content: '';
+    position: absolute;
+    left: -0.1em;
+    right: -0.1em;
+    top: 50%;
+    bottom: 50%;
+    background-color: var(--highlight-color);
+    z-index: 1;
+    opacity: 0;
+    transition: top 0.4s cubic-bezier(0.76, 0, 0.24, 1), 
+                bottom 0.4s cubic-bezier(0.76, 0, 0.24, 1),
+                opacity 0.2s ease-in-out;
+}
+
+.word-wrapper.hover-active .word.highlight::before {
+     top: -0.2em;
+     bottom: -0.2em;
+     opacity: 1;
+}
+
+.word-wrapper.hover-active .word.highlight .letter {
+    color: var(--highlight-text-hover);
+}
+
+@media (max-width: 600px) {
+    #animated-text {
+        font-size: 1.8rem;
+    }
+}
