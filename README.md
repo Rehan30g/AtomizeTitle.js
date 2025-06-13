@@ -1,6 +1,8 @@
 # AtomizeTitle.js ⚛️
 
-![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg) ![Built with JavaScript](https://img.shields.io/badge/Built_with-JavaScript-yellow?style=flat&logo=javascript)
+
+
 
 A lightweight JavaScript module to create stunning, futuristic text animations. Atomize.js brings your titles to life with a magnetic 'puzzle-solve' effect where letters assemble themselves right before your eyes.
 
