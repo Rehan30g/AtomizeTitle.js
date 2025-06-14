@@ -117,6 +117,13 @@ To make a word stand out with the hover effect, just wrap it in asterisks (`*`).
 
 If you use this project, I'd love to see it! Give this repo a ⭐️ if you found it helpful.
 
+### Donate me!
+[![Donasi Lewat Saweria](https://img.shields.io/badge/Saweria-Donate-orange?logo=ko-fi&logoColor=white)](https://saweria.co/Rehan30g)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/paypalme/rehan30g)
+
+
+
+
 ---
 
 ## License
